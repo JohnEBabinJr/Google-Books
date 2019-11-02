@@ -1,29 +1,55 @@
-# Create React Express App
+# React Google Books Search
 
-## About This Boilerplate
+### Overview
 
-This setup allows for a Node/Express/React app which can be easily deployed to Heroku.
+React-based Google Books Search app. This SPA (Single Page Application) uses [`react-router-dom`]to navigate, hide and show your React components without changing the route within Express. Using helper/util functions and React lifecycle methods to query and display books based on user searches, this is a full MERN stack application allows users to save books to a database to refer to at a later date. Built with Node, Express and MongoDB, and React-Toastify for custom alerts. Toasty!
 
-The front-end React app will auto-reload as it's updated via webpack dev server, and the backend Express app will auto-reload independently with nodemon.
+### required npm packages
 
-## Starting the app locally
+`mongoose`, `axios`, `react-router-dom`, `react-toastify`
 
-Start by installing front and backend dependencies. While in this directory, run the following command:
+## Database
 
-```
-yarn install
-```
+1. Connect to a MongoDB database named `googlebooks` using the mongoose npm package.
 
-This should install node modules within the server and the client folder.
+2. Using mongoose, create a Book schema.
 
-After both installations complete, run the following command in your terminal:
+3. Books should have each of the following fields:
 
-```
-yarn start
-```
+* `title` - Title of the book from the Google Books API
 
-Your app should now be running on <http://localhost:3000>. The Express server should intercept any AJAX requests from the client.
+* `authors` - The books's author(s) as returned from the Google Books API
 
-## Deployment (Heroku)
+* `description` - The book's description as returned from the Google Books API
 
-To deploy, simply add and commit your changes, and push to Heroku. As is, the NPM scripts should take care of the rest.
+* `image` - The Book's thumbnail image as returned from the Google Books API
+
+* `link` - The Book's information link as returned from the Google Books API
+
+* Example JSON:
+
+    ```js
+    {
+      authors: ["Suzanne Collins"]
+      description: "Set in a dark vision of the near future, a terrifying reality TV show is taking place. Twelve boys and twelve girls are forced to appear in a live event called The Hunger Games. There is only one rule: kill or be killed. When sixteen-year-old Katniss Everdeen steps forward to take her younger sister's place in the games, she sees it as a death sentence. But Katniss has been close to death before. For her, survival is second nature."
+      image: "http://books.google.com/books/content?id=sazytgAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+      link: "http://books.google.com/books?id=sazytgAACAAJ&dq=title:The+Hunger+Games&hl=&source=gbs_api"
+      title: "The Hunger Games"
+    }
+    ```
+
+
+### Technologies Implemented
+
+* Bootstrap
+* Express
+* Node.js
+* React
+* MongoDB
+* Heroku
+
+### Live site
+
+* deployed: https://lil-google-books-search.herokuapp.com/
+
+

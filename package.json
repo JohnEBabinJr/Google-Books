@@ -1,22 +1,19 @@
 {
   "name": "mern",
   "version": "1.0.0",
-  "description": "Mern Demo",
+  "description": "react based google book search",
   "main": "server.js",
-  "engines": {
-    "node": "8.11.3",
-    "yarn": "1.12.3"
-  },
   "scripts": {
-    "start": "if-env NODE_ENV=production && yarn run start:prod || yarn run start:dev",
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
     "start:prod": "node server.js",
-    "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"yarn run client\"",
-    "client": "cd client && yarn run start",
-    "install": "cd client && yarn install",
-    "build": "cd client && yarn run build",
-    "heroku-postbuild": "yarn run build"
+    "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
+    "client": "cd client && npm run start",
+    "seed": "node scripts/seedDB.js",
+    "install": "cd client && npm install",
+    "build": "cd client && npm run build",
+    "heroku-postbuild": "npm run build"
   },
-  "author": "",
+  "author": "John Babin",
   "license": "ISC",
   "devDependencies": {
     "concurrently": "^4.1.0",
@@ -24,10 +21,21 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
-    "dotenv": "^6.2.0",
+    "classnames": "^2.2.6",
+    "cors": "^2.8.5",
+    "dotenv": "^7.0.0",
     "express": "^4.16.3",
     "if-env": "^1.0.4",
-    "mongodb": "^3.1.11",
-    "mongoose": "^5.4.4"
-  }
+    "mongoose": "^5.3.16",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-router-dom": "^5.0.0",
+    "react-scripts": "^2.1.8",
+    "react-toastify": "^5.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JohnEBabinJr/Google-Books"
+  },
+  "homepage": "https://github.com/JohnEBabinJr/Google-Books"
 }
