@@ -7,7 +7,7 @@ export function Container({ fluid, children }) {
 export function Row({ fluid, children }) {
   return <div className={`row${fluid ? "-fluid" : ""}`}>{children}</div>;
 }
-
+//Export
 export function Col({ size, children }) {
   return (
     <div
